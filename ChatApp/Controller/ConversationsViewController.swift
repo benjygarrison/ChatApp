@@ -7,15 +7,18 @@
 
 import UIKit
 
-private let reuseIdentifier = "ConversationCellId"
 
 class ConversationsViewController: UIViewController {
     
-    //MARK: Properties
+//MARK: Properties
+    
     private let tableView = UITableView()
+    private let reuseIdentifier = "ConversationCellId"
+
     
     
-    //MARK: LifeCycle
+//MARK: ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +28,7 @@ class ConversationsViewController: UIViewController {
     }
     
     
-    //MARK: Functions
+//MARK: Selectors
     
     @objc private func showProfile() {
         print("123")
@@ -34,28 +37,34 @@ class ConversationsViewController: UIViewController {
     //set up UI
     private func setUpUI() {
         view.backgroundColor = .white
-        let image = UIImage(systemName: "person.circle.fill")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
-                                                           style: .plain,
-                                                           target: self,
-                                                           action: #selector(showProfile))
     }
     
     //set up nav bar
     private func setUpNavigationBar() {
+        //configures navBar to utilize upper screen properly
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.backgroundColor = .systemMint
         
+        //allows navBar to compress/decompress when tableView is scrolled
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        //basic UI declarations
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Messages"
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark //currently not working properly; return to this
+        
+        //adds clickable image to navBar
+        let image = UIImage(systemName: "person.circle.fill")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(showProfile))
         
     }
     
@@ -67,7 +76,7 @@ class ConversationsViewController: UIViewController {
         
         tableView.rowHeight = 80
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView() //sets correct number of row borders
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -75,6 +84,9 @@ class ConversationsViewController: UIViewController {
     
     
 }
+
+
+//MARK: TableView Delegate
 
 extension ConversationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,6 +100,7 @@ extension ConversationsViewController: UITableViewDelegate {
     
     
 }
+//MARK: TableView Datasource
 
 extension ConversationsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

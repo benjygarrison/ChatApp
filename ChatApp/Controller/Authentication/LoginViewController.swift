@@ -15,36 +15,63 @@ class LoginViewController: UIViewController {
     
     //icon
     private let icon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "bubble.right")
-        imageView.tintColor = .white
-        return imageView
+        let iconImageView = UIImageView()
+        iconImageView.image = UIImage(systemName: "bubble.right")
+        iconImageView.tintColor = .white
+        
+        return iconImageView
     }()
     
     //email
     private let emailContainerView: UIView  = {
-       let view = UIView()
-        view.backgroundColor = .blue
+       let emailContainerView = UIView()
+        emailContainerView.backgroundColor = .clear
+        emailContainerView.setHeight(height: 50)
         
-        return view
+        let emailImageView = UIImageView()
+        emailImageView.image = UIImage(systemName: "envelope")
+        emailImageView.tintColor = .white
+        
+        emailContainerView.addSubview(emailImageView)
+        emailImageView.centerY(inView: emailContainerView)
+        emailImageView.anchor(left: emailContainerView.leftAnchor, paddingLeft: 8)
+        emailImageView.setDimensions(height: 24, width: 24)
+        
+        return emailContainerView
     }()
     
     //password
     private let passwordContainerView: UIView  = {
-       let view = UIView()
-        view.backgroundColor = .green
+       let passwordContainerView = UIView()
+        passwordContainerView.backgroundColor = .clear
+        passwordContainerView.setHeight(height: 50)
         
-        return view
+        let passwordImageView = UIImageView()
+        passwordImageView.image = UIImage(systemName: "lock")
+        passwordImageView.tintColor = .white
+        
+        passwordContainerView.addSubview(passwordImageView)
+        passwordImageView.centerY(inView: passwordContainerView)
+        passwordImageView.anchor(left: passwordContainerView.leftAnchor, paddingLeft: 8)
+        passwordImageView.setDimensions(height: 24, width: 24)
+        
+        
+        return passwordContainerView
     }()
     
     //login button
     private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Log In", for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = .systemGray
-        return button
+        let loginButton = UIButton(type: .system)
+        loginButton.setTitle("Log In", for: .normal)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.layer.cornerRadius = 5
+        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        loginButton.backgroundColor = .clear
+        loginButton.layer.borderWidth = 1.0
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        loginButton.setHeight(height: 50)
+        
+        return loginButton
         
     }()
     

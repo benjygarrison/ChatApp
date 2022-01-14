@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  LayoutExtensions.swift
 //  ChatApp
 //
 //  Created by Ben Garrison on 1/14/22.

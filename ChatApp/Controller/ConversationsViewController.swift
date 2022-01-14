@@ -14,7 +14,6 @@ class ConversationsViewController: UIViewController {
     
     private let tableView = UITableView()
     private let reuseIdentifier = "ConversationCellId"
-
     
     
 //MARK: ViewDidLoad
@@ -25,10 +24,11 @@ class ConversationsViewController: UIViewController {
         setUpUI()
         setUpNavigationBar()
         setUpTableView()
+        
     }
     
     
-//MARK: Selectors
+//MARK: Functions
     
     @objc private func showProfile() {
         print("123")
@@ -57,7 +57,7 @@ class ConversationsViewController: UIViewController {
         navigationItem.title = "Messages"
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark //currently not working properly; return to this
+        //navigationController?.navigationBar.overrideUserInterfaceStyle = .dark //not working
         
         //adds clickable image to navBar
         let image = UIImage(systemName: "person.circle.fill")

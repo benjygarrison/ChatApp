@@ -17,6 +17,9 @@
 		BAC0344E2790DEAF00A73426 /* ChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0344D2790DEAF00A73426 /* ChatAppUITests.swift */; };
 		BAC034502790DEAF00A73426 /* ChatAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0344F2790DEAF00A73426 /* ChatAppUITestsLaunchTests.swift */; };
 		BAC034632790DF0C00A73426 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034622790DF0C00A73426 /* ConversationsViewController.swift */; };
+		BAC0346627920A8C00A73426 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346527920A8C00A73426 /* LoginViewController.swift */; };
+		BAC0346827920AA300A73426 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346727920AA300A73426 /* RegistrationViewController.swift */; };
+		BAC0346A2792159200A73426 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034692792159200A73426 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		BAC0344D2790DEAF00A73426 /* ChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUITests.swift; sourceTree = "<group>"; };
 		BAC0344F2790DEAF00A73426 /* ChatAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BAC034622790DF0C00A73426 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		BAC0346527920A8C00A73426 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BAC0346727920AA300A73426 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BAC034692792159200A73426 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +112,7 @@
 				BAC0345F2790DEC500A73426 /* ViewModel */,
 				BAC0345E2790DEBE00A73426 /* Controller */,
 				BAC0345D2790DEBC00A73426 /* APIService */,
-				BAC0345C2790DEB400A73426 /* Utiilities */,
+				BAC0345C2790DEB400A73426 /* Utilities */,
 				BAC0342C2790DEAB00A73426 /* AppDelegate.swift */,
 				BAC0342E2790DEAB00A73426 /* SceneDelegate.swift */,
 				BAC034302790DEAB00A73426 /* ViewController.swift */,
@@ -135,11 +141,12 @@
 			path = ChatAppUITests;
 			sourceTree = "<group>";
 		};
-		BAC0345C2790DEB400A73426 /* Utiilities */ = {
+		BAC0345C2790DEB400A73426 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BAC034692792159200A73426 /* Extensions.swift */,
 			);
-			path = Utiilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		BAC0345D2790DEBC00A73426 /* APIService */ = {
@@ -152,6 +159,7 @@
 		BAC0345E2790DEBE00A73426 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0346427920A5E00A73426 /* Authentication */,
 				BAC034622790DF0C00A73426 /* ConversationsViewController.swift */,
 			);
 			path = Controller;
@@ -176,6 +184,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BAC0346427920A5E00A73426 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0346527920A8C00A73426 /* LoginViewController.swift */,
+				BAC0346727920AA300A73426 /* RegistrationViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +330,9 @@
 				BAC0342D2790DEAB00A73426 /* AppDelegate.swift in Sources */,
 				BAC0342F2790DEAB00A73426 /* SceneDelegate.swift in Sources */,
 				BAC034632790DF0C00A73426 /* ConversationsViewController.swift in Sources */,
+				BAC0346827920AA300A73426 /* RegistrationViewController.swift in Sources */,
+				BAC0346627920A8C00A73426 /* LoginViewController.swift in Sources */,
+				BAC0346A2792159200A73426 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

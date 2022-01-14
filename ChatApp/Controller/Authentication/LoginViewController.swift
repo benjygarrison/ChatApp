@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         return iconImageView
     }()
     
-    //email
+    //MARK: Email
     private let emailContainerView: UIView  = {
        let emailContainerView = UIView()
         emailContainerView.backgroundColor = .clear
@@ -35,12 +35,19 @@ class LoginViewController: UIViewController {
         emailContainerView.addSubview(emailImageView)
         emailImageView.centerY(inView: emailContainerView)
         emailImageView.anchor(left: emailContainerView.leftAnchor, paddingLeft: 8)
-        emailImageView.setDimensions(height: 24, width: 24)
+        emailImageView.setDimensions(height: 24, width: 28)
         
         return emailContainerView
     }()
     
-    //password
+    private var emailTextField: UITextField = {
+        let emailText = UITextField()
+        emailText.placeholder = "Email"
+        
+        return emailText
+    }()
+    
+    //MARK: Password
     private let passwordContainerView: UIView  = {
        let passwordContainerView = UIView()
         passwordContainerView.backgroundColor = .clear
@@ -53,13 +60,21 @@ class LoginViewController: UIViewController {
         passwordContainerView.addSubview(passwordImageView)
         passwordImageView.centerY(inView: passwordContainerView)
         passwordImageView.anchor(left: passwordContainerView.leftAnchor, paddingLeft: 8)
-        passwordImageView.setDimensions(height: 24, width: 24)
-        
+        passwordImageView.setDimensions(height: 28, width: 28)
         
         return passwordContainerView
     }()
     
-    //login button
+    private var passwordTextField: UITextField = {
+        let passwordText = UITextField()
+        passwordText.placeholder = "Password"
+        passwordText.isSecureTextEntry = true
+        
+        return passwordText
+        
+    }()
+    
+    //MARK: Login button
     private let loginButton: UIButton = {
         let loginButton = UIButton(type: .system)
         loginButton.setTitle("Log In", for: .normal)
@@ -72,7 +87,6 @@ class LoginViewController: UIViewController {
         loginButton.setHeight(height: 50)
         
         return loginButton
-        
     }()
     
     

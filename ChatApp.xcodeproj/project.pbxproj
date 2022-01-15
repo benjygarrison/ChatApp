@@ -19,7 +19,9 @@
 		BAC034632790DF0C00A73426 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034622790DF0C00A73426 /* ConversationsViewController.swift */; };
 		BAC0346627920A8C00A73426 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346527920A8C00A73426 /* LoginViewController.swift */; };
 		BAC0346827920AA300A73426 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346727920AA300A73426 /* RegistrationViewController.swift */; };
-		BAC0346A2792159200A73426 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034692792159200A73426 /* LayoutExtensions.swift */; };
+		BAC0346A2792159200A73426 /* ConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034692792159200A73426 /* ConstraintExtension.swift */; };
+		BAC0346C2792BF8F00A73426 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346B2792BF8F00A73426 /* InputContainerView.swift */; };
+		BAC0346E2792C60F00A73426 /* SetUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,9 @@
 		BAC034622790DF0C00A73426 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		BAC0346527920A8C00A73426 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BAC0346727920AA300A73426 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		BAC034692792159200A73426 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
+		BAC034692792159200A73426 /* ConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintExtension.swift; sourceTree = "<group>"; };
+		BAC0346B2792BF8F00A73426 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpTextFields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +148,7 @@
 		BAC0345C2790DEB400A73426 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BAC034692792159200A73426 /* LayoutExtensions.swift */,
+				BAC034692792159200A73426 /* ConstraintExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -175,6 +179,8 @@
 		BAC034602790DEC700A73426 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0346B2792BF8F00A73426 /* InputContainerView.swift */,
+				BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,12 +333,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC034312790DEAB00A73426 /* ViewController.swift in Sources */,
+				BAC0346E2792C60F00A73426 /* SetUpTextFields.swift in Sources */,
+				BAC0346C2792BF8F00A73426 /* InputContainerView.swift in Sources */,
 				BAC0342D2790DEAB00A73426 /* AppDelegate.swift in Sources */,
 				BAC0342F2790DEAB00A73426 /* SceneDelegate.swift in Sources */,
 				BAC034632790DF0C00A73426 /* ConversationsViewController.swift in Sources */,
 				BAC0346827920AA300A73426 /* RegistrationViewController.swift in Sources */,
 				BAC0346627920A8C00A73426 /* LoginViewController.swift in Sources */,
-				BAC0346A2792159200A73426 /* LayoutExtensions.swift in Sources */,
+				BAC0346A2792159200A73426 /* ConstraintExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,81 +21,30 @@ class LoginViewController: UIViewController {
     }()
     
     //MARK: Email
-    private lazy var emailContainerView: UIView  = {
-       let emailContainerView = UIView()
-        emailContainerView.backgroundColor = .clear
-        emailContainerView.setHeight(height: 50)
+    private lazy var emailContainerView: InputContainerView  = {
+        let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
         
-        let emailImageView = UIImageView()
-        emailImageView.image = UIImage(systemName: "envelope")
-        emailImageView.tintColor = .white
-        
-        emailContainerView.addSubview(emailImageView)
-        emailImageView.centerY(inView: emailContainerView)
-        emailImageView.anchor(left: emailContainerView.leftAnchor, paddingLeft: 8)
-        emailImageView.setDimensions(height: 24, width: 28)
-        
-        emailContainerView.addSubview(emailTextField)
-        emailTextField.centerY(inView: emailContainerView)
-        emailTextField.anchor(left: emailImageView.rightAnchor,
-                              bottom: emailContainerView.bottomAnchor,
-                              right: emailContainerView.rightAnchor,
-                              paddingTop: 8,
-                              paddingLeft: 8)
-        
-        
-        return emailContainerView
+        return containerView
     }()
     
     private let emailTextField: UITextField = {
-        let emailText = UITextField()
-        emailText.attributedPlaceholder = NSAttributedString (
-        string: "Email",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        emailText.textColor = .white
-        
+        let emailText = SetUpTextFields(placeholder: "Email")
         
         return emailText
     }()
     
     //MARK: Password
     private lazy var passwordContainerView: UIView  = {
-       let passwordContainerView = UIView()
-        passwordContainerView.backgroundColor = .clear
-        passwordContainerView.setHeight(height: 50)
+        let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
         
-        let passwordImageView = UIImageView()
-        passwordImageView.image = UIImage(systemName: "lock")
-        passwordImageView.tintColor = .white
-        
-        passwordContainerView.addSubview(passwordImageView)
-        passwordImageView.centerY(inView: passwordContainerView)
-        passwordImageView.anchor(left: passwordContainerView.leftAnchor, paddingLeft: 8)
-        passwordImageView.setDimensions(height: 28, width: 28)
-        
-        passwordContainerView.addSubview(passwordTextField)
-        passwordTextField.anchor(left: passwordImageView.rightAnchor,
-                              bottom: passwordContainerView.bottomAnchor,
-                              right: passwordContainerView.rightAnchor,
-                              paddingLeft: 8,
-                              paddingBottom: 10)
-        
-        return passwordContainerView
+        return containerView
     }()
     
     private var passwordTextField: UITextField = {
-        let passwordText = UITextField()
-        passwordText.placeholder = "Password"
+        let passwordText = SetUpTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
-        passwordText.textColor = .white
-        passwordText.attributedPlaceholder = NSAttributedString (
-        string: "Password",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        
+       
         return passwordText
-        
     }()
     
     //MARK: Login button

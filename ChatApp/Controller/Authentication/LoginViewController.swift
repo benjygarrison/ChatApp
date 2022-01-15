@@ -62,6 +62,26 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
+    //MARK: New user button
+    
+    private let newUserButton: UIButton = {
+        let newUserButton = UIButton(type: .system)
+        
+        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
+        string: "No account?  ",
+        attributes: [.font: UIFont.systemFont(ofSize: 16),
+                        .foregroundColor: UIColor.white])
+        attributedButtonTitle.append(NSAttributedString(string: "Sign up now!",
+                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+                        .foregroundColor: UIColor.white]))
+        newUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+        
+        newUserButton.addTarget(self, action: #selector(handleShowSignUpView), for: .touchUpInside)
+        
+        
+        return newUserButton
+    }()
+    
     
     //MARK: ViewDidLoad
     
@@ -71,7 +91,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    //MARK: Functions
+    //MARK: Layout
     
     private func setUpUI() {
         navigationController?.isNavigationBarHidden = true
@@ -101,6 +121,14 @@ class LoginViewController: UIViewController {
                               paddingLeft: 32,
                               paddingRight: 32)
         
+        view.addSubview(newUserButton)
+        newUserButton.anchor(left: view.leftAnchor,
+                             bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                             right: view.rightAnchor,
+                             paddingLeft: 32,
+                             paddingBottom: 16,
+                             paddingRight: 32)
+        
     }
     
     private func setUpGradient() {
@@ -109,6 +137,13 @@ class LoginViewController: UIViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+    
+    //MARK: Selectors
+    
+    @objc func handleShowSignUpView() {
+        let controller = RegistrationViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

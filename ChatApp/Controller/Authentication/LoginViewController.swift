@@ -11,8 +11,6 @@ class LoginViewController: UIViewController {
     
     //MARK: Properties
     
-    //create interface items programmatically
-    
     //icon
     private let icon: UIImageView = {
         let iconImageView = UIImageView()
@@ -23,7 +21,7 @@ class LoginViewController: UIViewController {
     }()
     
     //MARK: Email
-    private let emailContainerView: UIView  = {
+    private lazy var emailContainerView: UIView  = {
        let emailContainerView = UIView()
         emailContainerView.backgroundColor = .clear
         emailContainerView.setHeight(height: 50)
@@ -37,18 +35,32 @@ class LoginViewController: UIViewController {
         emailImageView.anchor(left: emailContainerView.leftAnchor, paddingLeft: 8)
         emailImageView.setDimensions(height: 24, width: 28)
         
+        emailContainerView.addSubview(emailTextField)
+        emailTextField.centerY(inView: emailContainerView)
+        emailTextField.anchor(left: emailImageView.rightAnchor,
+                              bottom: emailContainerView.bottomAnchor,
+                              right: emailContainerView.rightAnchor,
+                              paddingTop: 8,
+                              paddingLeft: 8)
+        
+        
         return emailContainerView
     }()
     
-    private var emailTextField: UITextField = {
+    private let emailTextField: UITextField = {
         let emailText = UITextField()
-        emailText.placeholder = "Email"
+        emailText.attributedPlaceholder = NSAttributedString (
+        string: "Email",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+        emailText.textColor = .white
+        
         
         return emailText
     }()
     
     //MARK: Password
-    private let passwordContainerView: UIView  = {
+    private lazy var passwordContainerView: UIView  = {
        let passwordContainerView = UIView()
         passwordContainerView.backgroundColor = .clear
         passwordContainerView.setHeight(height: 50)
@@ -62,6 +74,13 @@ class LoginViewController: UIViewController {
         passwordImageView.anchor(left: passwordContainerView.leftAnchor, paddingLeft: 8)
         passwordImageView.setDimensions(height: 28, width: 28)
         
+        passwordContainerView.addSubview(passwordTextField)
+        passwordTextField.anchor(left: passwordImageView.rightAnchor,
+                              bottom: passwordContainerView.bottomAnchor,
+                              right: passwordContainerView.rightAnchor,
+                              paddingLeft: 8,
+                              paddingBottom: 10)
+        
         return passwordContainerView
     }()
     
@@ -69,6 +88,11 @@ class LoginViewController: UIViewController {
         let passwordText = UITextField()
         passwordText.placeholder = "Password"
         passwordText.isSecureTextEntry = true
+        passwordText.textColor = .white
+        passwordText.attributedPlaceholder = NSAttributedString (
+        string: "Password",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
         
         return passwordText
         

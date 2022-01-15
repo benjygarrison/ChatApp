@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         return containerView
     }()
     
-    private var passwordTextField: UITextField = {
+    private let passwordTextField: UITextField = {
         let passwordText = SetUpTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
        
@@ -63,7 +63,6 @@ class LoginViewController: UIViewController {
     }()
     
     //MARK: New user button
-    
     private let newUserButton: UIButton = {
         let newUserButton = UIButton(type: .system)
         
@@ -96,23 +95,21 @@ class LoginViewController: UIViewController {
     private func setUpUI() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemMint
-        
+
         let userLoginStack = UIStackView(arrangedSubviews: [emailContainerView,
                                                             passwordContainerView,
                                                             loginButton])
-        
+
         userLoginStack.axis = .vertical
         userLoginStack.spacing = 16
-        
-        
+
         setUpGradient()
-        
+
         view.addSubview(icon)
         icon.centerX(inView: view)
         icon.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         icon.setDimensions(height: 120, width: 120)
-        
-        
+
         view.addSubview(userLoginStack)
         userLoginStack.anchor(top: icon.bottomAnchor,
                               left: view.leftAnchor,
@@ -120,7 +117,7 @@ class LoginViewController: UIViewController {
                               paddingTop: 32,
                               paddingLeft: 32,
                               paddingRight: 32)
-        
+
         view.addSubview(newUserButton)
         newUserButton.anchor(left: view.leftAnchor,
                              bottom: view.safeAreaLayoutGuide.bottomAnchor,
@@ -128,9 +125,8 @@ class LoginViewController: UIViewController {
                              paddingLeft: 32,
                              paddingBottom: 16,
                              paddingRight: 32)
-        
     }
-    
+
     private func setUpGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemMint.cgColor, UIColor.systemBlue.cgColor]
@@ -147,3 +143,4 @@ class LoginViewController: UIViewController {
     }
     
 }
+

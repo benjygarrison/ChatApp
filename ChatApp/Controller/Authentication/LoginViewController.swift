@@ -88,6 +88,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         
+        
     }
     
     //MARK: Layout
@@ -127,13 +128,13 @@ class LoginViewController: UIViewController {
                              paddingRight: 32)
     }
 
-    private func setUpGradient() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemMint.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
+//    private func setUpGradient() {
+//        let gradient = CAGradientLayer()
+//        gradient.colors = [UIColor.systemMint.cgColor, UIColor.systemBlue.cgColor]
+//        gradient.locations = [0, 1]
+//        view.layer.addSublayer(gradient)
+//        gradient.frame = view.frame
+//    }
     
     //MARK: Selectors
     

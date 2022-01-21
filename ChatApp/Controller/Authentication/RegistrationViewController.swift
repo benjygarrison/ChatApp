@@ -41,8 +41,10 @@ class RegistrationViewController: UIViewController {
         addPhotoButton.layer.borderWidth = 3.0
         addPhotoButton.layer.borderColor = UIColor.white.cgColor
         addPhotoButton.layer.cornerRadius = 60
-        addPhotoButton.setTitle("+", for: .normal)
-        addPhotoButton.titleLabel?.font = UIFont.systemFont(ofSize: 75, weight: .regular)
+        addPhotoButton.setTitle("Add\nPhoto", for: .normal)
+        addPhotoButton.titleLabel?.lineBreakMode = .byWordWrapping
+        addPhotoButton.titleLabel?.textAlignment = .center
+        addPhotoButton.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .regular)
         addPhotoButton.setDimensions(height: 120, width: 120)
 
     }

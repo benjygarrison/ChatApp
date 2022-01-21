@@ -35,16 +35,24 @@ class RegistrationViewController: UIViewController {
         setUpGradient()
         
         view.addSubview(addPhotoButton)
+        
+        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
+        string: "+",
+        attributes: [.font: UIFont.systemFont(ofSize: 40),
+                        .foregroundColor: UIColor.white])
+        attributedButtonTitle.append(NSAttributedString(string: "\nphoto",
+                        attributes: [.font: UIFont.systemFont(ofSize: 25),
+                        .foregroundColor: UIColor.white]))
+        addPhotoButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+        
         addPhotoButton.centerX(inView: view)
         addPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         addPhotoButton.backgroundColor = .clear
         addPhotoButton.layer.borderWidth = 3.0
         addPhotoButton.layer.borderColor = UIColor.white.cgColor
         addPhotoButton.layer.cornerRadius = 60
-        addPhotoButton.setTitle("Add\nPhoto", for: .normal)
         addPhotoButton.titleLabel?.lineBreakMode = .byWordWrapping
         addPhotoButton.titleLabel?.textAlignment = .center
-        addPhotoButton.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .regular)
         addPhotoButton.setDimensions(height: 120, width: 120)
 
     }

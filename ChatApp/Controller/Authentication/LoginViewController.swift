@@ -87,8 +87,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        
-        
     }
     
     //MARK: Layout

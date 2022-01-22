@@ -49,15 +49,15 @@ class LoginViewController: UIViewController {
     
     //MARK: Login button
     private let loginButton: UIButton = {
-        let loginButton = UIButton(type: .system)
-        loginButton.setTitle("Log In", for: .normal)
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.layer.cornerRadius = 5
-        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        loginButton.backgroundColor = .clear
-        loginButton.layer.borderWidth = 1.0
-        loginButton.layer.borderColor = UIColor.white.cgColor
-        loginButton.setHeight(height: 50)
+        let loginButton = SetUpButtons(placeholder: "Log In")//UIButton(type: .system)
+//        loginButton.setTitle("Log In", for: .normal)
+//        loginButton.setTitleColor(.white, for: .normal)
+//        loginButton.layer.cornerRadius = 5
+//        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+//        loginButton.backgroundColor = .clear
+//        loginButton.layer.borderWidth = 1.0
+//        loginButton.layer.borderColor = UIColor.white.cgColor
+//        loginButton.setHeight(height: 50)
         
         return loginButton
     }()

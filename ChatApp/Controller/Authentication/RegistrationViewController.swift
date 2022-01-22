@@ -73,15 +73,15 @@ class RegistrationViewController: UIViewController {
     
     //MARK: SignUp button
     private let signUpButton: UIButton = {
-        let signUpButton = UIButton(type: .system)
-        signUpButton.setTitle("Sign Up Now!", for: .normal)
-        signUpButton.setTitleColor(.white, for: .normal)
-        signUpButton.layer.cornerRadius = 5
-        signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        signUpButton.backgroundColor = .clear
-        signUpButton.layer.borderWidth = 1.0
-        signUpButton.layer.borderColor = UIColor.white.cgColor
-        signUpButton.setHeight(height: 50)
+        let signUpButton = SetUpButtons(placeholder: "Sign Up Now!")
+//        signUpButton.setTitle("Sign Up Now!", for: .normal)
+//        signUpButton.setTitleColor(.white, for: .normal)
+//        signUpButton.layer.cornerRadius = 5
+//        signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+//        signUpButton.backgroundColor = .clear
+//        signUpButton.layer.borderWidth = 1.0
+//        signUpButton.layer.borderColor = UIColor.white.cgColor
+//        signUpButton.setHeight(height: 50)
         
         return signUpButton
     }()

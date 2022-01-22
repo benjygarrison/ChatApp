@@ -20,7 +20,7 @@ class RegistrationViewController: UIViewController {
     
     //MARK: UserName
     private lazy var userNameContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: userNameTextField)
+        let containerView = InputContainerView(image: UIImage(systemName: "person"), textField: userNameTextField)
         
         return containerView
     }()
@@ -33,7 +33,7 @@ class RegistrationViewController: UIViewController {
     
     //MARK: Name
     private lazy var nameContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: nameTextField)
+        let containerView = InputContainerView(image: UIImage(systemName: "person"), textField: nameTextField)
         
         return containerView
     }()

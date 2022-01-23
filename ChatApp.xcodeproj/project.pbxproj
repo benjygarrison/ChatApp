@@ -22,8 +22,8 @@
 		BAC0346627920A8C00A73426 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346527920A8C00A73426 /* LoginViewController.swift */; };
 		BAC0346827920AA300A73426 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346727920AA300A73426 /* RegistrationViewController.swift */; };
 		BAC0346A2792159200A73426 /* Background+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034692792159200A73426 /* Background+Constraints.swift */; };
-		BAC0346C2792BF8F00A73426 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346B2792BF8F00A73426 /* InputContainerView.swift */; };
-		BAC0346E2792C60F00A73426 /* SetUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */; };
+		BAC0346C2792BF8F00A73426 /* InputContainerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346B2792BF8F00A73426 /* InputContainerViews.swift */; };
+		BAC0346E2792C60F00A73426 /* UserTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346D2792C60F00A73426 /* UserTextFields.swift */; };
 		BAC034702797650400A73426 /* Background+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0346F2797650400A73426 /* Background+Gradient.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +64,8 @@
 		BAC0346527920A8C00A73426 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BAC0346727920AA300A73426 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BAC034692792159200A73426 /* Background+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+Constraints.swift"; sourceTree = "<group>"; };
-		BAC0346B2792BF8F00A73426 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
-		BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpTextFields.swift; sourceTree = "<group>"; };
+		BAC0346B2792BF8F00A73426 /* InputContainerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerViews.swift; sourceTree = "<group>"; };
+		BAC0346D2792C60F00A73426 /* UserTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextFields.swift; sourceTree = "<group>"; };
 		BAC0346F2797650400A73426 /* Background+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+Gradient.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,8 +186,8 @@
 		BAC034602790DEC700A73426 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0346B2792BF8F00A73426 /* InputContainerView.swift */,
-				BAC0346D2792C60F00A73426 /* SetUpTextFields.swift */,
+				BAC0346B2792BF8F00A73426 /* InputContainerViews.swift */,
+				BAC0346D2792C60F00A73426 /* UserTextFields.swift */,
 				BA5F9976279CCBB800A4B111 /* SignInButtons.swift */,
 				BA5F9978279CD24000A4B111 /* NewUserButtons.swift */,
 			);
@@ -345,8 +345,8 @@
 				BAC034312790DEAB00A73426 /* ViewController.swift in Sources */,
 				BAC034702797650400A73426 /* Background+Gradient.swift in Sources */,
 				BA5F9979279CD24000A4B111 /* NewUserButtons.swift in Sources */,
-				BAC0346E2792C60F00A73426 /* SetUpTextFields.swift in Sources */,
-				BAC0346C2792BF8F00A73426 /* InputContainerView.swift in Sources */,
+				BAC0346E2792C60F00A73426 /* UserTextFields.swift in Sources */,
+				BAC0346C2792BF8F00A73426 /* InputContainerViews.swift in Sources */,
 				BAC0342D2790DEAB00A73426 /* AppDelegate.swift in Sources */,
 				BAC0342F2790DEAB00A73426 /* SceneDelegate.swift in Sources */,
 				BAC034632790DF0C00A73426 /* ConversationsViewController.swift in Sources */,

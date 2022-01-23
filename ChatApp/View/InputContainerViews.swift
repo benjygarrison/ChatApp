@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InputContainerView: UIView {
+class InputContainerViews: UIView {
     
     init(image: UIImage?, textField: UITextField) {
         super.init(frame: .zero)

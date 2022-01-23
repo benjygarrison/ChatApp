@@ -19,53 +19,53 @@ class RegistrationViewController: UIViewController {
     }()
     
     //MARK: UserName
-    private lazy var userNameContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "person"), textField: userNameTextField)
+    private lazy var userNameContainerView: InputContainerViews  = {
+        let containerView = InputContainerViews(image: UIImage(systemName: "person"), textField: userNameTextField)
         
         return containerView
     }()
     
     private let userNameTextField: UITextField = {
-        let userNameText = SetUpTextFields(placeholder: "Username")
+        let userNameText = UserTextFields(placeholder: "Username")
         
         return userNameText
     }()
     
     //MARK: Name
-    private lazy var nameContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "person"), textField: nameTextField)
+    private lazy var nameContainerView: InputContainerViews  = {
+        let containerView = InputContainerViews(image: UIImage(systemName: "person"), textField: nameTextField)
         
         return containerView
     }()
     
     private let nameTextField: UITextField = {
-        let nameText = SetUpTextFields(placeholder: "Name")
+        let nameText = UserTextFields(placeholder: "Name")
         
         return nameText
     }()
     
     //MARK: Email
-    private lazy var emailContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
+    private lazy var emailContainerView: InputContainerViews  = {
+        let containerView = InputContainerViews(image: UIImage(systemName: "envelope"), textField: emailTextField)
         
         return containerView
     }()
     
     private let emailTextField: UITextField = {
-        let emailText = SetUpTextFields(placeholder: "Email")
+        let emailText = UserTextFields(placeholder: "Email")
         
         return emailText
     }()
     
     //MARK: Password
     private lazy var passwordContainerView: UIView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
+        let containerView = InputContainerViews(image: UIImage(systemName: "lock"), textField: passwordTextField)
         
         return containerView
     }()
     
     private let passwordTextField: UITextField = {
-        let passwordText = SetUpTextFields(placeholder: "Password")
+        let passwordText = UserTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
        
         return passwordText
@@ -74,31 +74,12 @@ class RegistrationViewController: UIViewController {
     //MARK: SignUp button
     private let signUpButton: UIButton = {
         let signUpButton = SignInButtons(placeholder: "Sign Up Now!")
-//        signUpButton.setTitle("Sign Up Now!", for: .normal)
-//        signUpButton.setTitleColor(.white, for: .normal)
-//        signUpButton.layer.cornerRadius = 5
-//        signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-//        signUpButton.backgroundColor = .clear
-//        signUpButton.layer.borderWidth = 1.0
-//        signUpButton.layer.borderColor = UIColor.white.cgColor
-//        signUpButton.setHeight(height: 50)
-        
         return signUpButton
     }()
     
     //MARK: New user button
     private let existingUserButton: UIButton = {
-        let existingUserButton = NewUserButtons(placeholderOne: "Have an account? ", placeholderTwo: "Log In Now!") // UIButton(type: .system)
-        
-//        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
-//        string: "Have an account?  ",
-//        attributes: [.font: UIFont.systemFont(ofSize: 16),
-//                        .foregroundColor: UIColor.white])
-//        attributedButtonTitle.append(NSAttributedString(string: "Log In Now!",
-//                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
-//                        .foregroundColor: UIColor.white]))
-//        existingUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
-//
+        let existingUserButton = NewUserButtons(placeholderOne: "Have an account? ", placeholderTwo: "Log In Now!")
        existingUserButton.addTarget(self, action: #selector(handleShowLoginView), for: .touchUpInside)
         
         
@@ -176,7 +157,6 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc func handleShowLoginView() {
-        //let controller = LoginViewController()
         navigationController?.popViewController(animated: true)
     }
     

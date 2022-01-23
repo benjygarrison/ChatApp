@@ -21,27 +21,27 @@ class LoginViewController: UIViewController {
     }()
     
     //MARK: Email
-    private lazy var emailContainerView: InputContainerView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
+    private lazy var emailContainerView: InputContainerViews  = {
+        let containerView = InputContainerViews(image: UIImage(systemName: "envelope"), textField: emailTextField)
         
         return containerView
     }()
     
     private let emailTextField: UITextField = {
-        let emailText = SetUpTextFields(placeholder: "Email")
+        let emailText = UserTextFields(placeholder: "Email")
         
         return emailText
     }()
     
     //MARK: Password
     private lazy var passwordContainerView: UIView  = {
-        let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
+        let containerView = InputContainerViews(image: UIImage(systemName: "lock"), textField: passwordTextField)
         
         return containerView
     }()
     
     private let passwordTextField: UITextField = {
-        let passwordText = SetUpTextFields(placeholder: "Password")
+        let passwordText = UserTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
        
         return passwordText
@@ -49,32 +49,13 @@ class LoginViewController: UIViewController {
     
     //MARK: Login button
     private let loginButton: UIButton = {
-        let loginButton = SignInButtons(placeholder: "Log In")//UIButton(type: .system)
-//        loginButton.setTitle("Log In", for: .normal)
-//        loginButton.setTitleColor(.white, for: .normal)
-//        loginButton.layer.cornerRadius = 5
-//        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-//        loginButton.backgroundColor = .clear
-//        loginButton.layer.borderWidth = 1.0
-//        loginButton.layer.borderColor = UIColor.white.cgColor
-//        loginButton.setHeight(height: 50)
-        
+        let loginButton = SignInButtons(placeholder: "Log In")
         return loginButton
     }()
     
     //MARK: New user button
     private let newUserButton: UIButton = {
-        let newUserButton = NewUserButtons(placeholderOne: "No account? ", placeholderTwo: "Sign Up Now!")   // UIButton(type: .system)
-        
-//        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
-//        string: "No account?  ",
-//        attributes: [.font: UIFont.systemFont(ofSize: 16),
-//                        .foregroundColor: UIColor.white])
-//        attributedButtonTitle.append(NSAttributedString(string: "Sign up now!",
-//                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
-//                        .foregroundColor: UIColor.white]))
-//        newUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
-
+        let newUserButton = NewUserButtons(placeholderOne: "No account? ", placeholderTwo: "Sign Up Now!")
         newUserButton.addTarget(self, action: #selector(handleShowSignUpView), for: .touchUpInside)
 
         
@@ -125,14 +106,6 @@ class LoginViewController: UIViewController {
                              paddingBottom: 16,
                              paddingRight: 32)
     }
-
-//    private func setUpGradient() {
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [UIColor.systemMint.cgColor, UIColor.systemBlue.cgColor]
-//        gradient.locations = [0, 1]
-//        view.layer.addSublayer(gradient)
-//        gradient.frame = view.frame
-//    }
     
     //MARK: Selectors
     

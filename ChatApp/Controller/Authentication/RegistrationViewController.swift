@@ -73,7 +73,7 @@ class RegistrationViewController: UIViewController {
     
     //MARK: SignUp button
     private let signUpButton: UIButton = {
-        let signUpButton = SetUpButtons(placeholder: "Sign Up Now!")
+        let signUpButton = SignInButtons(placeholder: "Sign Up Now!")
 //        signUpButton.setTitle("Sign Up Now!", for: .normal)
 //        signUpButton.setTitleColor(.white, for: .normal)
 //        signUpButton.layer.cornerRadius = 5
@@ -88,18 +88,18 @@ class RegistrationViewController: UIViewController {
     
     //MARK: New user button
     private let existingUserButton: UIButton = {
-        let existingUserButton = UIButton(type: .system)
+        let existingUserButton = NewUserButtons(placeholderOne: "Have an account? ", placeholderTwo: "Log In Now!") // UIButton(type: .system)
         
-        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
-        string: "Have an account?  ",
-        attributes: [.font: UIFont.systemFont(ofSize: 16),
-                        .foregroundColor: UIColor.white])
-        attributedButtonTitle.append(NSAttributedString(string: "Log In Now!",
-                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
-                        .foregroundColor: UIColor.white]))
-        existingUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
-        
-        existingUserButton.addTarget(self, action: #selector(handleShowLoginView), for: .touchUpInside)
+//        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
+//        string: "Have an account?  ",
+//        attributes: [.font: UIFont.systemFont(ofSize: 16),
+//                        .foregroundColor: UIColor.white])
+//        attributedButtonTitle.append(NSAttributedString(string: "Log In Now!",
+//                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+//                        .foregroundColor: UIColor.white]))
+//        existingUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+//
+       existingUserButton.addTarget(self, action: #selector(handleShowLoginView), for: .touchUpInside)
         
         
         return existingUserButton

@@ -25,7 +25,7 @@ class SetUpTextFields: UITextField {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("text field has not been implemented")
+        fatalError("SetUpTextField has not been implemented")
     }
     
 }

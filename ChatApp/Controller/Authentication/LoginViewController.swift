@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     
     //MARK: Login button
     private let loginButton: UIButton = {
-        let loginButton = SetUpButtons(placeholder: "Log In")//UIButton(type: .system)
+        let loginButton = SignInButtons(placeholder: "Log In")//UIButton(type: .system)
 //        loginButton.setTitle("Log In", for: .normal)
 //        loginButton.setTitleColor(.white, for: .normal)
 //        loginButton.layer.cornerRadius = 5
@@ -64,19 +64,19 @@ class LoginViewController: UIViewController {
     
     //MARK: New user button
     private let newUserButton: UIButton = {
-        let newUserButton = UIButton(type: .system)
+        let newUserButton = NewUserButtons(placeholderOne: "No account? ", placeholderTwo: "Sign Up Now!")   // UIButton(type: .system)
         
-        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
-        string: "No account?  ",
-        attributes: [.font: UIFont.systemFont(ofSize: 16),
-                        .foregroundColor: UIColor.white])
-        attributedButtonTitle.append(NSAttributedString(string: "Sign up now!",
-                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
-                        .foregroundColor: UIColor.white]))
-        newUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
-        
+//        let attributedButtonTitle = NSMutableAttributedString ( //must be mutable in order to append
+//        string: "No account?  ",
+//        attributes: [.font: UIFont.systemFont(ofSize: 16),
+//                        .foregroundColor: UIColor.white])
+//        attributedButtonTitle.append(NSAttributedString(string: "Sign up now!",
+//                        attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+//                        .foregroundColor: UIColor.white]))
+//        newUserButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+
         newUserButton.addTarget(self, action: #selector(handleShowSignUpView), for: .touchUpInside)
-        
+
         
         return newUserButton
     }()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetUpButtons: UIButton {
+class SignInButtons: UIButton {
     
     init(placeholder: String) {
         super .init(frame: .zero)
@@ -27,7 +27,7 @@ class SetUpButtons: UIButton {
     
     
     required init?(coder: NSCoder) {
-        fatalError("button has not been implemented")
+        fatalError("SignInButton has not been implemented")
     }
     
     

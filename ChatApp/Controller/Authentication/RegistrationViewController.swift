@@ -183,7 +183,7 @@ class RegistrationViewController: UIViewController {
         default: break
         }
         validateForm()
-        print("keep on testing")
+        print("testing once again")
     }
     
 }

@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     //MARK: Properties
     
-    private var viewModel = LoginViewModel()
+    private var loginModel = LoginViewModel()
     
     //icon
     private let icon: UIImageView = {
@@ -104,7 +104,7 @@ class LoginViewController: UIViewController {
     }
     
     private func validateForm() {
-        if viewModel.validForm {
+        if loginModel.validForm {
             loginButton.isEnabled = true
             loginButton.backgroundColor = .systemBlue
             loginButton.layer.borderWidth = 0
@@ -128,9 +128,9 @@ class LoginViewController: UIViewController {
     
     @objc private func textChanged(sender: UITextField) {
         if sender == emailTextField {
-            viewModel.email = sender.text
+            loginModel.email = sender.text
         } else {
-            viewModel.password = sender.text
+            loginModel.password = sender.text
         }
         validateForm()
     }

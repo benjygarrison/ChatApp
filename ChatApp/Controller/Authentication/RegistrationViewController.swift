@@ -11,6 +11,8 @@ class RegistrationViewController: UIViewController {
     
     //MARK: Properties
     
+    var registrationModel = RegistrationViewModel()
+    
     //Add Photo
     private let addPhotoButton: UIButton = {
         let addPhotoButton = UIButton(type: .system)
@@ -63,6 +65,7 @@ class RegistrationViewController: UIViewController {
     //SignUp button
     private let signUpButton: UIButton = {
         let signUpButton = SignInButtons(placeholder: "Sign Up Now!")
+        signUpButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return signUpButton
     }()
     
@@ -80,7 +83,7 @@ class RegistrationViewController: UIViewController {
         setUpUI()
     }
     
-    //MARK: Layout
+    //MARK: Functions
     
     private func setUpUI() {
         setUpGradient()
@@ -130,7 +133,26 @@ class RegistrationViewController: UIViewController {
                              paddingLeft: 32,
                              paddingBottom: 16,
                              paddingRight: 32)
+        
+        userNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        nameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
     }
+    
+    private func validateForm() {
+        if registrationModel.validForm {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = .systemBlue
+            signUpButton.layer.borderWidth = 0
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = .clear
+            signUpButton.layer.borderWidth = 1.0
+        }
+    }
+    
+    
     
     //MARK: Selectors
     
@@ -138,7 +160,27 @@ class RegistrationViewController: UIViewController {
         print("photo added")
     }
     
-    @objc func handleShowLoginView() {
+    @objc private func handleSignUp() {
+        
+    }
+    
+    @objc private func handleShowLoginView() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc private func textChanged(sender: UITextField) {
+        switch sender {
+        case userNameTextField:
+            registrationModel.userName = sender.text
+        case nameTextField:
+            registrationModel.name = sender.text
+        case emailTextField:
+            registrationModel.email = sender.text
+        case passwordTextField:
+            registrationModel.password = sender.text
+        default: break
+        }
+        validateForm()
+    }
+    
 }

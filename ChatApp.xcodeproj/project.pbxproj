@@ -10,6 +10,7 @@
 		BA5F9977279CCBB800A4B111 /* SignInButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F9976279CCBB800A4B111 /* SignInButtons.swift */; };
 		BA5F9979279CD24000A4B111 /* NewUserButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F9978279CD24000A4B111 /* NewUserButtons.swift */; };
 		BA5F997D279CF1F300A4B111 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F997C279CF1F300A4B111 /* LoginViewModel.swift */; };
+		BA5F997F279CFC4000A4B111 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F997E279CFC4000A4B111 /* RegistrationViewModel.swift */; };
 		BAC0342D2790DEAB00A73426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0342C2790DEAB00A73426 /* AppDelegate.swift */; };
 		BAC0342F2790DEAB00A73426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0342E2790DEAB00A73426 /* SceneDelegate.swift */; };
 		BAC034312790DEAB00A73426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC034302790DEAB00A73426 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		BA5F9976279CCBB800A4B111 /* SignInButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButtons.swift; sourceTree = "<group>"; };
 		BA5F9978279CD24000A4B111 /* NewUserButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserButtons.swift; sourceTree = "<group>"; };
 		BA5F997C279CF1F300A4B111 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BA5F997E279CFC4000A4B111 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		BAC034292790DEAB00A73426 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC0342C2790DEAB00A73426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC0342E2790DEAB00A73426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5F997C279CF1F300A4B111 /* LoginViewModel.swift */,
+				BA5F997E279CFC4000A4B111 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				BA5F9977279CCBB800A4B111 /* SignInButtons.swift in Sources */,
 				BAC034312790DEAB00A73426 /* ViewController.swift in Sources */,
 				BAC034702797650400A73426 /* Background+Gradient.swift in Sources */,
+				BA5F997F279CFC4000A4B111 /* RegistrationViewModel.swift in Sources */,
 				BA5F9979279CD24000A4B111 /* NewUserButtons.swift in Sources */,
 				BAC0346E2792C60F00A73426 /* UserTextFields.swift in Sources */,
 				BAC0346C2792BF8F00A73426 /* InputContainerViews.swift in Sources */,

@@ -18,9 +18,9 @@ class AddPhotoButton: UIButton {
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = 75.0
         self.titleLabel?.textColor = .white
-        self.setTitle("Add Photo", for: .normal)
+        self.setTitle("Add \nPhoto", for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        //self.titleLabel?.lineBreakMode = .byWordWrapping
+        self.titleLabel?.lineBreakMode = .byWordWrapping
         self.titleLabel?.textAlignment = .center
         self.setDimensions(height: 150, width: 150)
         self.clipsToBounds = true

@@ -17,7 +17,25 @@ class RegistrationViewController: UIViewController {
     private let addPhotoButton: UIButton = {
         let addPhotoButton = UIButton(type: .system)
         addPhotoButton.tintColor = .white
+        addPhotoButton.backgroundColor = .clear
+        addPhotoButton.layer.borderWidth = 3.0
+        addPhotoButton.layer.borderColor = UIColor.white.cgColor
+        addPhotoButton.layer.cornerRadius = 75.0
+        addPhotoButton.titleLabel?.lineBreakMode = .byWordWrapping
+        addPhotoButton.titleLabel?.textAlignment = .center
+        addPhotoButton.setDimensions(height: 150, width: 150)
+        addPhotoButton.clipsToBounds = true
+        
+        let attributedButtonTitle = NSMutableAttributedString (
+        string: "+",
+        attributes: [.font: UIFont.systemFont(ofSize: 40),
+                        .foregroundColor: UIColor.white])
+        attributedButtonTitle.append(NSAttributedString(string: "\nPhoto",
+                        attributes: [.font: UIFont.boldSystemFont(ofSize: 25),
+                        .foregroundColor: UIColor.white]))
+        addPhotoButton.setAttributedTitle(attributedButtonTitle, for: .normal)
         addPhotoButton.addTarget(self, action: #selector(addNewPhoto), for: .touchUpInside)
+        
         return addPhotoButton
     }()
     
@@ -90,24 +108,10 @@ class RegistrationViewController: UIViewController {
         
         view.addSubview(addPhotoButton)
         
-        let attributedButtonTitle = NSMutableAttributedString (
-        string: "+",
-        attributes: [.font: UIFont.systemFont(ofSize: 40),
-                        .foregroundColor: UIColor.white])
-        attributedButtonTitle.append(NSAttributedString(string: "\nPhoto",
-                        attributes: [.font: UIFont.boldSystemFont(ofSize: 25),
-                        .foregroundColor: UIColor.white]))
-        addPhotoButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+        
         
         addPhotoButton.centerX(inView: view)
         addPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        addPhotoButton.backgroundColor = .clear
-        addPhotoButton.layer.borderWidth = 3.0
-        addPhotoButton.layer.borderColor = UIColor.white.cgColor
-        addPhotoButton.layer.cornerRadius = 60
-        addPhotoButton.titleLabel?.lineBreakMode = .byWordWrapping
-        addPhotoButton.titleLabel?.textAlignment = .center
-        addPhotoButton.setDimensions(height: 120, width: 120)
         
         let userLoginStack = UIStackView(arrangedSubviews: [userNameContainerView,
                                                             nameContainerView,
@@ -183,7 +187,6 @@ class RegistrationViewController: UIViewController {
         default: break
         }
         validateForm()
-        print("testing once again")
     }
     
 }
@@ -193,7 +196,14 @@ class RegistrationViewController: UIViewController {
 extension RegistrationViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("image picker")
+        let image = info[.originalImage] as? UIImage
+        addPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        addPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        addPhotoButton.layer.borderWidth = 3.0
+        addPhotoButton.layer.cornerRadius = 75.0
+        addPhotoButton.imageView?.clipsToBounds = true
+        addPhotoButton.imageView?.contentMode = .scaleAspectFill
+        dismiss(animated: true, completion: nil)
     }
     
 }

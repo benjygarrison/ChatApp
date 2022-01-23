@@ -38,11 +38,9 @@ class InputContainerViews: UIView {
                        right: rightAnchor,
                        paddingLeft: 8,
                        height: 0.75)
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("InputContainerView has not been implemented")
     }
-    
 }

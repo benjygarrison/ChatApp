@@ -11,6 +11,7 @@ class RegistrationViewController: UIViewController {
     
     //MARK: Properties
     
+    //Add Photo
     private let addPhotoButton: UIButton = {
         let addPhotoButton = UIButton(type: .system)
         addPhotoButton.tintColor = .white
@@ -18,82 +19,65 @@ class RegistrationViewController: UIViewController {
         return addPhotoButton
     }()
     
-    //MARK: UserName
+    //UserName
     private lazy var userNameContainerView: InputContainerViews  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "person"), textField: userNameTextField)
-        
         return containerView
     }()
-    
     private let userNameTextField: UITextField = {
         let userNameText = UserTextFields(placeholder: "Username")
-        
         return userNameText
     }()
     
-    //MARK: Name
+    //Actual Name
     private lazy var nameContainerView: InputContainerViews  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "person"), textField: nameTextField)
-        
         return containerView
     }()
-    
     private let nameTextField: UITextField = {
         let nameText = UserTextFields(placeholder: "Name")
-        
         return nameText
     }()
     
-    //MARK: Email
+    //Email
     private lazy var emailContainerView: InputContainerViews  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "envelope"), textField: emailTextField)
-        
         return containerView
     }()
-    
     private let emailTextField: UITextField = {
         let emailText = UserTextFields(placeholder: "Email")
-        
         return emailText
     }()
     
-    //MARK: Password
+    //Password
     private lazy var passwordContainerView: UIView  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "lock"), textField: passwordTextField)
-        
         return containerView
     }()
-    
     private let passwordTextField: UITextField = {
         let passwordText = UserTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
-       
         return passwordText
     }()
     
-    //MARK: SignUp button
+    //SignUp button
     private let signUpButton: UIButton = {
         let signUpButton = SignInButtons(placeholder: "Sign Up Now!")
         return signUpButton
     }()
     
-    //MARK: New user button
+    //New user button
     private let existingUserButton: UIButton = {
         let existingUserButton = NewUserButtons(placeholderOne: "Have an account? ", placeholderTwo: "Log In Now!")
        existingUserButton.addTarget(self, action: #selector(handleShowLoginView), for: .touchUpInside)
-        
-        
         return existingUserButton
     }()
-    
     
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpUI()
-        
     }
     
     //MARK: Layout
@@ -146,9 +130,7 @@ class RegistrationViewController: UIViewController {
                              paddingLeft: 32,
                              paddingBottom: 16,
                              paddingRight: 32)
-
     }
-    
     
     //MARK: Selectors
     
@@ -159,5 +141,4 @@ class RegistrationViewController: UIViewController {
     @objc func handleShowLoginView() {
         navigationController?.popViewController(animated: true)
     }
-    
 }

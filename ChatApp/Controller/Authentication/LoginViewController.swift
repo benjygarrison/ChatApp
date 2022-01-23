@@ -11,57 +11,50 @@ class LoginViewController: UIViewController {
     
     //MARK: Properties
     
+    private var viewModel = LoginViewModel()
+    
     //icon
     private let icon: UIImageView = {
         let iconImageView = UIImageView()
         iconImageView.image = UIImage(systemName: "bubble.right")
         iconImageView.tintColor = .white
-        
         return iconImageView
     }()
     
-    //MARK: Email
+    //Email
     private lazy var emailContainerView: InputContainerViews  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "envelope"), textField: emailTextField)
-        
         return containerView
     }()
-    
     private let emailTextField: UITextField = {
         let emailText = UserTextFields(placeholder: "Email")
-        
         return emailText
     }()
     
-    //MARK: Password
+    //Password
     private lazy var passwordContainerView: UIView  = {
         let containerView = InputContainerViews(image: UIImage(systemName: "lock"), textField: passwordTextField)
-        
         return containerView
     }()
-    
     private let passwordTextField: UITextField = {
         let passwordText = UserTextFields(placeholder: "Password")
         passwordText.isSecureTextEntry = true
-       
         return passwordText
     }()
     
-    //MARK: Login button
+    //Login button
     private let loginButton: UIButton = {
         let loginButton = SignInButtons(placeholder: "Log In")
+        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return loginButton
     }()
     
-    //MARK: New user button
+    //New user button
     private let newUserButton: UIButton = {
         let newUserButton = NewUserButtons(placeholderOne: "No account? ", placeholderTwo: "Sign Up Now!")
         newUserButton.addTarget(self, action: #selector(handleShowSignUpView), for: .touchUpInside)
-
-        
         return newUserButton
     }()
-    
     
     //MARK: ViewDidLoad
     
@@ -70,11 +63,18 @@ class LoginViewController: UIViewController {
         setUpUI()
     }
     
-    //MARK: Layout
+    //MARK: Functions
     
     private func setUpUI() {
+        setUpGradient()
+        
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemMint
+        
+        view.addSubview(icon)
+        icon.centerX(inView: view)
+        icon.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        icon.setDimensions(height: 120, width: 120)
 
         let userLoginStack = UIStackView(arrangedSubviews: [emailContainerView,
                                                             passwordContainerView,
@@ -82,13 +82,6 @@ class LoginViewController: UIViewController {
 
         userLoginStack.axis = .vertical
         userLoginStack.spacing = 16
-
-        setUpGradient()
-
-        view.addSubview(icon)
-        icon.centerX(inView: view)
-        icon.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        icon.setDimensions(height: 120, width: 120)
 
         view.addSubview(userLoginStack)
         userLoginStack.anchor(top: icon.bottomAnchor,
@@ -105,13 +98,41 @@ class LoginViewController: UIViewController {
                              paddingLeft: 32,
                              paddingBottom: 16,
                              paddingRight: 32)
+        
+        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+    }
+    
+    private func validateForm() {
+        if viewModel.validForm {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .systemBlue
+            loginButton.layer.borderWidth = 0
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = .clear
+            loginButton.layer.borderWidth = 1.0
+        }
     }
     
     //MARK: Selectors
     
-    @objc func handleShowSignUpView() {
+    @objc private func handleLogin() {
+        
+    }
+    
+    @objc private func handleShowSignUpView() {
         let controller = RegistrationViewController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc private func textChanged(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        validateForm()
     }
     
 }

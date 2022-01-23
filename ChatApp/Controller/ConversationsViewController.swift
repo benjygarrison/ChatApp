@@ -65,7 +65,6 @@ class ConversationsViewController: UIViewController {
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(showProfile))
-        
     }
     
     //set up tableView

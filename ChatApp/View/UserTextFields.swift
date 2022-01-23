@@ -20,12 +20,9 @@ class UserTextFields: UITextField {
         attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
         )
         textColor = .white
-        
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("SetUpTextField has not been implemented")
     }
-    
 }

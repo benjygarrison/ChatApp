@@ -183,7 +183,7 @@ class RegistrationViewController: UIViewController {
         default: break
         }
         validateForm()
-        print("testing git")
+        print("keep on testing")
     }
     
 }
@@ -193,7 +193,7 @@ class RegistrationViewController: UIViewController {
 extension RegistrationViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        <#code#>
+        print("image picker")
     }
     
 }

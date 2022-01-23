@@ -13,7 +13,8 @@ struct LoginViewModel {
     var password: String?
     
     var validForm: Bool {
-        return email?.isEmpty == false && password?.isEmpty == false
+        return email?.isEmpty == false
+        && password?.isEmpty == false
     }
     
 }

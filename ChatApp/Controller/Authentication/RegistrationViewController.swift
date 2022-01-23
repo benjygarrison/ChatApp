@@ -157,11 +157,13 @@ class RegistrationViewController: UIViewController {
     //MARK: Selectors
     
     @objc private func addNewPhoto() {
-        print("photo added")
+        let profileImagePickerController = UIImagePickerController()
+        profileImagePickerController.delegate = self
+        present(profileImagePickerController, animated: true, completion: nil)
     }
     
     @objc private func handleSignUp() {
-        
+ 
     }
     
     @objc private func handleShowLoginView() {
@@ -181,6 +183,16 @@ class RegistrationViewController: UIViewController {
         default: break
         }
         validateForm()
+    }
+    
+}
+
+//MARK: Image Picker Delegates
+
+extension RegistrationViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+ 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        <#code#>
     }
     
 }

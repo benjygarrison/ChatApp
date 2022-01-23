@@ -183,6 +183,7 @@ class RegistrationViewController: UIViewController {
         default: break
         }
         validateForm()
+        print("testing git")
     }
     
 }

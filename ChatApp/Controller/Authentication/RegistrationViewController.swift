@@ -14,28 +14,9 @@ class RegistrationViewController: UIViewController {
     var registrationModel = RegistrationViewModel()
     
     //Add Photo
-    private let addPhotoButton: UIButton = {
-        let addPhotoButton = UIButton(type: .system)
-        addPhotoButton.tintColor = .white
-        addPhotoButton.backgroundColor = .clear
-        addPhotoButton.layer.borderWidth = 3.0
-        addPhotoButton.layer.borderColor = UIColor.white.cgColor
-        addPhotoButton.layer.cornerRadius = 75.0
-        addPhotoButton.titleLabel?.lineBreakMode = .byWordWrapping
-        addPhotoButton.titleLabel?.textAlignment = .center
-        addPhotoButton.setDimensions(height: 150, width: 150)
-        addPhotoButton.clipsToBounds = true
-        
-        let attributedButtonTitle = NSMutableAttributedString (
-        string: "+",
-        attributes: [.font: UIFont.systemFont(ofSize: 40),
-                        .foregroundColor: UIColor.white])
-        attributedButtonTitle.append(NSAttributedString(string: "\nPhoto",
-                        attributes: [.font: UIFont.boldSystemFont(ofSize: 25),
-                        .foregroundColor: UIColor.white]))
-        addPhotoButton.setAttributedTitle(attributedButtonTitle, for: .normal)
+    private var addPhotoButton: UIButton = {
+        var addPhotoButton = AddPhotoButton()
         addPhotoButton.addTarget(self, action: #selector(addNewPhoto), for: .touchUpInside)
-        
         return addPhotoButton
     }()
     
@@ -197,6 +178,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate & UINaviga
  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        addPhotoButton.titleLabel?.textColor = .clear
         addPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         addPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
         addPhotoButton.layer.borderWidth = 3.0

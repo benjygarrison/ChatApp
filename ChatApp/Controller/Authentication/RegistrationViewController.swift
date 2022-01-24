@@ -63,7 +63,16 @@ class RegistrationViewController: UIViewController {
     
     //SignUp button
     private let signUpButton: UIButton = {
-        let signUpButton = SignInButtons(placeholder: "Sign Up Now!")
+        let signUpButton = UIButton(type: .system)
+        signUpButton.setTitle("Sign Up Now!", for: .normal)
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        signUpButton.backgroundColor = .clear
+        signUpButton.layer.borderWidth = 1.0
+        signUpButton.layer.borderColor = UIColor.white.cgColor
+        signUpButton.setHeight(height: 50)
+        signUpButton.isEnabled = false
         signUpButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return signUpButton
     }()
@@ -80,6 +89,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        setUpTextFieldObservers()
     }
     
     //MARK: Functions
@@ -119,10 +129,10 @@ class RegistrationViewController: UIViewController {
                              paddingBottom: 16,
                              paddingRight: 32)
         
-        userNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
-        nameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
-        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+//        userNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+//        nameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+//        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+//        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
     }
     
     private func validateForm() {
@@ -137,6 +147,13 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    private func setUpTextFieldObservers() {
+        userNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        nameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+    }
+    
     
     
     //MARK: Selectors
@@ -148,7 +165,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func handleSignUp() {
- 
+        print("Sign Up Now!")
     }
     
     @objc private func handleShowLoginView() {
@@ -183,8 +200,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate & UINaviga
         addPhotoButton.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
         addPhotoButton.layer.borderWidth = 3.0
         addPhotoButton.layer.cornerRadius = 75.0
-        addPhotoButton.imageView?.clipsToBounds = true
-        addPhotoButton.imageView?.contentMode = .scaleAspectFill
+        //addPhotoButton.imageView?.contentMode = .scaleAspectFill
         dismiss(animated: true, completion: nil)
     }
     

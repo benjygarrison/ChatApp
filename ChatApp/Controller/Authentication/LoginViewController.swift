@@ -44,7 +44,16 @@ class LoginViewController: UIViewController {
     
     //Login button
     private let loginButton: UIButton = {
-        let loginButton = SignInButtons(placeholder: "Log In")
+        let loginButton = UIButton(type: .system)
+        loginButton.setTitle("Log In", for: .normal)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.layer.cornerRadius = 5
+        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        loginButton.backgroundColor = .clear
+        loginButton.layer.borderWidth = 1.0
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        loginButton.setHeight(height: 50)
+        loginButton.isEnabled = false
         loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return loginButton
     }()
@@ -118,7 +127,7 @@ class LoginViewController: UIViewController {
     //MARK: Selectors
     
     @objc private func handleLogin() {
-        
+        print("Log In")
     }
     
     @objc private func handleShowSignUpView() {
